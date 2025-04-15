@@ -14,6 +14,7 @@ export default async function <T = unknown, R extends NitroFetchRequest = NitroF
 
       async onResponseError({ response, error }) {
          const res = response as FetchResponse<NuxtError>
+         useAppStore().notify("error", "Error", res._data?.message ?? "Something went wrong")
 
          if (res._data?.statusCode == 401) {
             // TODO: Unauthenticated handler
