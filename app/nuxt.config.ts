@@ -4,6 +4,7 @@ export default defineNuxtConfig({
    devtools: { enabled: true },
    extends: [
       "../layers/core-ui",
-      "../layers/utilities"
+      "../layers/utilities",
+      "../layers/server"
    ]
 })

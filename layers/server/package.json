@@ -1,0 +1,14 @@
+{
+  "name": "server",
+  "type": "module",
+  "version": "0.0.1",
+  "main": "./nuxt.config.ts",
+  "scripts": {
+    "clean": "rimraf .nuxt .output node_modules"
+  },
+  "devDependencies": {
+    "nuxt": "^3.16.2",
+    "typescript": "^5.8.3",
+    "vue": "latest"
+  }
+}
