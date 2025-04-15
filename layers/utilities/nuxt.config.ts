@@ -7,5 +7,6 @@ export default defineNuxtConfig({
      "@pinia/nuxt",
      "@vueuse/nuxt",
      "dayjs-nuxt",
+     "pinia-plugin-persistedstate"
    ],
 })

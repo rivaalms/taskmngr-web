@@ -1,0 +1,1 @@
+declare type InferSchema<T> = import('yup').InferType<T>
