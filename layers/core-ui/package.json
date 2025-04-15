@@ -25,6 +25,5 @@
     "nuxt": "^3.16.2",
     "typescript": "^5.8.3",
     "vue": "latest"
-  },
-  "packageManager": "pnpm@9.14.2"
+  }
 }
