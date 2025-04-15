@@ -1,17 +1,25 @@
 <script setup lang="ts">
-const form = ref({
-   email: "",
-   password: "",
+definePageMeta({
+   layout: "auth"
 })
 
-const error = ref<Partial<Record<keyof typeof form.value, string>>>({})
+const { form, error, validator } = useForm(
+   {
+      email: "",
+      password: "",
+   },
+   $authSchema.login
+)
 
 async function onSubmit() {
-   await useValidation($authSchema.login, form.value).validate(
+   error.value = {}
+   await validator.validate(
       async (values) => {
-         await useAuthStore().login(values)
-            .then( async (res) => {
-               await navigateTo('/')
+         await useAuthStore()
+            .login(values)
+            .then(async (res) => {
+               useAppStore().notify("success", "Success", res.meta.message)
+               await navigateTo("/")
             })
       },
       (errors) => {
@@ -30,7 +38,7 @@ async function onSubmit() {
                   <h1 class="text-center text-2xl font-semibold">
                      Login to your account
                   </h1>
-                  <p class="text-sm text-surface-500 font-light">
+                  <p class="text-center text-sm text-surface-500 font-light">
                      Enter your email below to login to your account
                   </p>
                </div>
