@@ -7,5 +7,11 @@ export default defineNuxtConfig({
       "../layers/core-ui",
       "../layers/utilities",
       "../layers/server"
+   ],
+   components: [
+      {
+         path: "./components",
+         pathPrefix: false
+      }
    ]
 })
