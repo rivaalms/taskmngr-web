@@ -31,9 +31,9 @@ const menu = computed<MenuItem[]>(() => [
 </script>
 
 <template>
-   <div class="min-h-screen relative">
-      <aside
-         class="fixed left-0 inset-y-0 w-72 bg-surface-50 border-r border-surface-200 py-2"
+   <div class="relative">
+      <nav
+         class="fixed left-0 inset-y-0 w-72 bg-surface-50 border-r border-surface-200"
       >
          <LayoutSidebar :menu="menu">
             <template #start>
@@ -80,8 +80,8 @@ const menu = computed<MenuItem[]>(() => [
                </SecondaryButton>
             </template>
          </LayoutSidebar>
-      </aside>
-      <div class="ms-72 min-h-screen relative">
+      </nav>
+      <div class="ms-72 relative">
          <header class="h-16 fixed top-0 inset-x-0 ms-72 px-4 bg-white"
          >
             <div class="h-full w-full flex items-center gap-4">

@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const authStore = useAuthStore()
+</script>
+
 <template>
-   index page
+   lorem
 </template>
