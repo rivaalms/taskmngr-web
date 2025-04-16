@@ -17,6 +17,13 @@ export const useAuthStore = defineStore("taskmngr_auth", {
          const response = await $authApi.login(payload)
          this.user = response.data.user
          return response
+      },
+
+      async fetchSelf() {
+         await $authApi.self()
+            .then((res) => {
+               this.user = res.data
+            })
       }
    }
 })
